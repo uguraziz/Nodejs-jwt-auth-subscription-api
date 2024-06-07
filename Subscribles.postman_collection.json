@@ -1,0 +1,581 @@
+{
+	"info": {
+		"_postman_id": "3f6d1596-a89e-4fa9-b636-aae93cb24499",
+		"name": "Subscribles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34156541"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"123\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Test\",\r\n  \"lastname\": \"123\",\r\n  \"email\": \"test@test.com\",\r\n  \"password\": \"123\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": ""
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/me",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/forget-password",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"forget-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-code-check",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"code\": \"7f81b9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/reset-code-check",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"reset-code-check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"123\",\r\n    \"temporaryToken\": \"Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVlMjgwMTM0OTM0ZWZjNTQ2YmU4MDAiLCJuYW0iOiJheml6X2FsdHVuOTNAaG90bWFpbC5jb20iLCJpYXQiOjE3MTc0NDk1MTksImV4cCI6MTcxNzQ0OTY5OX0.IfgDZTRhTKVFPluaasztKl9bomY-j_QrfMJY6AV6vHLkAyEJdjOAFFY_QososF2hYy7IHMjjL9AP15bAFvnlqw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/reset-password",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjYzMTc5MTdkZWI3M2UyYzM1YWIxMzQiLCJuYW0iOiJUZXN0IiwiaWF0IjoxNzE3NzcwMTQwLCJleHAiOjE3MTgzNzQ5NDB9.Dab71IG1NtTfFHYgK7rjqC38JkRS1q4-hZUe5x3gUYOtUalIV56ItlEHftlk0ctbKjroQ4BhuFN3OJm05d52yg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "plans",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/plan/get",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"plan",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"plan 2\",\r\n    \"duration_months\": \"3\",\r\n    \"price\": \"7500\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/plan/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"plan",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"planId\": \"665e56847a9f45cb376ecabe\",\r\n    \"name\": \"plan 1\",\r\n    \"duration_months\": \"1\",\r\n    \"price\": \"2500\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/plan/update",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"plan",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/plan/delete/6660902f227471053f69d153",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"plan",
+								"delete",
+								"6660902f227471053f69d153"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/subs/get",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"subs",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"665e285d34934efc546be804\",\r\n    \"plan_id\": \"6660902f227471053f69d153\",\r\n    \"start_date\": \"2024-06-07\",\r\n    \"end_date\": \"2024-07-07\",\r\n    \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/subs/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"subs",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"66630b32c0d299e32188efb1\",\r\n    \"user_id\": \"665e280134934efc546be800\",\r\n    \"plan_id\": \"665e56847a9f45cb376ecabe\",\r\n    \"start_date\": \"2024-06-07\",\r\n    \"end_date\": \"2024-07-07\",\r\n    \"status\": \"cancelled\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/subs/update",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"subs",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/subs/delete/66630b32c0d299e32188efb1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"subs",
+								"delete",
+								"66630b32c0d299e32188efb1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payments",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pay/get",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pay",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\" : \"665e280134934efc546be800\",\r\n    \"amount\" : \"1500\",\r\n    \"payment_date\": \"2024-06-07\",\r\n    \"status\": \"completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pay/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pay",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"666315b5da7e1365dd1d3a7f\",\r\n    \"user_id\" : \"665e280134934efc546be800\",\r\n    \"amount\" : \"3500\",\r\n    \"payment_date\": \"2024-06-07\",\r\n    \"status\": \"completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pay/update",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pay",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pay/delete/6663165f268c4df8aa1a48dc",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pay",
+								"delete",
+								"6663165f268c4df8aa1a48dc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "localhost:5000/api",
+			"type": "string"
+		}
+	]
+}
